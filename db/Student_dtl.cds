@@ -12,18 +12,18 @@ entity StudentDetails : managed{
   /* courses : Composition of many CourseDetails
   on courses.student = $self */
   courses : Association to CourseDetails;
-  grades : Association to Grades;
+  grades : Composition of many Grades
+    on grades.student = $self;
 
 
 }
 entity Grades {
   key grade_id : Int16;
-  // student1: Association to StudentDetails;
   subject: String;  
   score: Int32;  
   semester: String;  
- /*  student: Association to StudentDetails; */
-student1: Association to StudentDetails;
+  student: Association to StudentDetails;
+// student1: Association to StudentDetails;
   
 }
 
