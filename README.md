@@ -23,3 +23,9 @@ File or Folder | Purpose
 ## Learn More
 
 Learn more at https://cap.cloud.sap/docs/get-started/.
+
+
+
+the command should followed by parent to child 
+#eg : student/CourseDetails?$expand=student($expand=grades)
+not like this (student/StudentDetails?$expand=student($expand=grades))
